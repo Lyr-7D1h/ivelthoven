@@ -1,8 +1,42 @@
+$primary_color: #444
+$secundary_color: orange
 
+@mixin background-size ($value:cover)
+  background-attachment: fixed
+  background-repeat: no-repeat;
+  -webkit-background-size: $value
+  -moz-background-size: $value
+  -o-background-size: $value
+  background-size: $value
   
 body
   padding: 10px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font: 1.8vw "Lucida Grande", Helvetica, Arial, sans-serif
+  background-image: url("../images/banner.jpg") 
+  @include background-size()
+
+  color: white
+  text-align: center
+  .title_lastname 
+    color: $secundary_color
+  #overlay 
+    background-color: $primary_color
+    opacity: 0.8
+    z-index: -1
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
 
 a
   color: #00B7FF
+i
+  color: $secundary_color
+  display: none
+  font-size: 60px
+  margin: 5%
+  &:hover
+    list-style-image: "this is text"
+    color: yellow
+    content: TEST

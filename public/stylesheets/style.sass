@@ -10,14 +10,14 @@ $secundary_color: orange
   background-size: $value
   
 body
-  padding: 10px
+  padding: 10%
   font: 1.8vw "Lucida Grande", Helvetica, Arial, sans-serif
   background-image: url("../images/banner.jpg") 
   @include background-size()
 
   color: white
   text-align: center
-  .title_lastname 
+  .colored 
     color: $secundary_color
   #overlay 
     background-color: $primary_color
@@ -40,3 +40,6 @@ i
     list-style-image: "this is text"
     color: yellow
     content: TEST
+
+#title_description_text 
+  display: none

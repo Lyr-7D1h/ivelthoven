@@ -11,8 +11,9 @@ $secundary_color: orange
   
 body
   padding: 10%
+  overflow: hidden
   font: 1.8vw "Lucida Grande", Helvetica, Arial, sans-serif
-  background-image: url("../images/banner.jpg") 
+  background-image: url("../images/back1.jpg") 
   @include background-size()
 
   color: white
@@ -30,7 +31,7 @@ body
     height: 100%
 
 a
-  color: #00B7FF
+  text-decoration: none
 i
   color: $secundary_color
   display: none
@@ -38,8 +39,68 @@ i
   margin: 5%
   &:hover
     list-style-image: "this is text"
+    cursor: pointer
     color: yellow
     content: TEST
 
 #title_description_text 
   display: none
+
+.version_control
+  font-size: 1.1vw
+  background-color: #444
+  padding: 5px
+  width: 5%
+  position: fixed
+  top: 0
+  left: 0
+  &:hover
+    background-color: #555
+    cursor: pointer
+
+#pages_menu
+  position: absolute
+  z-index: 100
+  bottom: 0
+  left: 50%
+  transform-origin: 25% 25%
+  transform: translate(-50%, -50%)
+  margin: 0
+  transition: 3s
+  &.clicked
+    transform-origin: 25% 25%
+    transform: rotate(180deg)
+    transition: 3s
+.menu
+  background-color: #333333
+  position: absolute
+  bottom: -35%
+  left: 0
+  width: 100%
+  .pages
+    position: relative
+    box-shadow: 2px 2px 15px black
+    margin: 3%
+    width: 25%
+    font-size: 2vw
+    border: none
+    color: white
+    padding: 50px
+    background-color: #444
+    transition: 1s
+    &:hover 
+      background-color: #222
+      color: $secundary_color
+      transition: 1.5s
+      cursor: pointer
+  .social_media
+    background-color: #222
+    box-shadow: 5px 5px 10px rgb(10,10,10)
+    position: relative
+    width: 40%
+    left: 50%
+    transform: translate(-50%,-10%)
+
+    i
+      margin-left: 50px
+      margin-right: 50px

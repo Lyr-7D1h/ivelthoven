@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
   }
 
   console.log(job_min, job_max);
-  res.render('index', { title: 'IVelthoven', job_min: job_min, job_max: job_max });
+  res.render('index', { title: 'IVelthoven', job_min: job_min, job_max: job_max, version: '2.0' });
 
 });
 router.get('/about', function(req, res, next) {

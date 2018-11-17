@@ -12,7 +12,39 @@
     <script src="./javascripts/jquery-3.x.min.js"></script>
   </head>
   <body>
+    <div id="overlay"></div>
+    <div class="version_control">
+        V{{version}}
+    </div>
     {{{body}}}
+
+    <i id="pages_menu"class="fas fa-chevron-circle-up"></i>
+    <div class="menu">
+        <div class="social_media">
+            <a target="_blank"href="https://github.com/ivelthoven">
+              <i class="fab fa-github"></i>   
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/ivo-velthoven/">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <i class="fab fa-twitter"></i> <!-- ON HOVER TEXT BOX EFFECT -->
+        </div>
+        <a href="/about">
+            <button class="pages" id="about">ABOUT</button>
+        </a>
+        <a href="/projects">
+            <button class="pages" id="projects">PROJECTS</button>
+        </a>
+        <a href="contact">
+            <button class="pages" id="contact">CONTACT</button>
+        </a>
+    </div>
+    
+    <footer>
+        &copy;ivelthoven.nl
+    </footer>
+
     <script src="./javascripts/main.js"></script>
   </body>
 </html>

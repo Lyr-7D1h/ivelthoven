@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+const version = 2.0;
+const pub_date = new Date();
+const edit_date = new Date();
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
@@ -15,11 +19,16 @@ router.get('/', function(req, res, next) {
   }
 
   console.log(job_min, job_max);
-  res.render('index', { title: 'IVelthoven', job_min: job_min, job_max: job_max, version: '2.0' });
+  res.render('index', { title: 'IVelthoven', job_min: job_min, job_max: job_max, version: version });
 
 });
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About' });
+  res.render('about', { title: 'About', version: version, pub_date: pub_date,edit_date: edit_date});
 });
-
+router.get('/projects', function(req, res, next) {
+  res.render('projects', { title: 'Projects', version: version });
+});
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Contact', version: version });
+});
 module.exports = router;

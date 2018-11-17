@@ -24,7 +24,7 @@ $(function () {
     menu_button.click(() => {
         if (!(menu_button.hasClass("clicked"))) {
             menu_button.addClass("clicked");
-            menu_button.animate({bottom: '35%'});
+            menu_button.animate({bottom: '50%'});
             $(".menu").fadeIn();
             $(".menu").animate({bottom: '0'}, 3000);
         } else {

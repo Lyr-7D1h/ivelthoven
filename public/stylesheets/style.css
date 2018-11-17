@@ -1,6 +1,4 @@
 body {
-  padding: 10%;
-  overflow: hidden;
   font: 1.8vw "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("../images/back1.jpg");
   background-attachment: fixed;
@@ -9,26 +7,39 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin: 0;
   color: white;
   text-align: center; }
+  body .index {
+    padding: 10%; }
+  body .text_box {
+    padding: 10%;
+    padding-left: 17%;
+    padding-right: 17%;
+    text-align: left; }
   body .colored {
     color: orange; }
   body #overlay {
     background-color: #444;
     opacity: 0.8;
     z-index: -1;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
+  body footer {
+    position: fixed;
+    color: #222;
+    bottom: 0;
+    right: 20px;
+    font-size: 1vw; }
 
 a {
   text-decoration: none; }
 
 i {
   color: orange;
-  display: none;
   font-size: 60px;
   margin: 5%; }
   i:hover {
@@ -53,7 +64,7 @@ i {
     cursor: pointer; }
 
 #pages_menu {
-  position: absolute;
+  position: fixed;
   z-index: 100;
   bottom: 0;
   left: 50%;
@@ -68,7 +79,7 @@ i {
 
 .menu {
   background-color: #333333;
-  position: absolute;
+  position: fixed;
   bottom: -35%;
   left: 0;
   width: 100%; }
@@ -98,5 +109,29 @@ i {
     .menu .social_media i {
       margin-left: 50px;
       margin-right: 50px; }
+
+.skills {
+  width: 100%;
+  margin-top: 5%;
+  position: relative;
+  overflow: auto;
+  left: 0;
+  background-color: #333333;
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .skills i {
+    font-size: 1.8vw; }
+    .skills i:hover {
+      color: orange;
+      cursor: auto; }
+  .skills .skill_box {
+    background-color: #222;
+    width: 25%;
+    padding: 20px;
+    margin: 2%;
+    float: left; }
+    .skills .skill_box p {
+      font-size: 1.4vw;
+      text-align: left; }
 
 /*# sourceMappingURL=style.css.map */

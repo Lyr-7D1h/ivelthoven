@@ -1,7 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const fs = require('fs');
 
-const version = 2.0;
+
+const version = 1.1;
 const pub_date = new Date();
 const edit_date = new Date();
 
@@ -31,4 +33,36 @@ router.get('/projects', function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact', version: version });
 });
+
+router.post('/contact', function(req,res,next) {
+  let firstname = req.body.firstname;
+  let lastname = req.body.lastname;
+  let subject = req.body.subject;
+  let boxes = [firstname, lastname, subject];
+  for (k in boxes) {
+    if (boxes[k].length > 900) {
+      res.render("contact", {title: "Too big!"});
+      return
+    }
+  }
+  let date = new Date();
+  let contact_form = `DATE: ${date}\nFIRSTNAME: ${firstname} \nLASTNAME: ${lastname}\nSUBJECT: ${subject}\n\n`
+  
+  let database_path = './database/contact'
+  
+  let database_size = fs.statSync(database_path).size;
+
+  console.log(database_size);
+  if (database_size < 60000) {
+    fs.appendFile(database_path, contact_form, function(err) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log("CONTACT FORM SAVED");
+      res.render("contact", {title: "Form Send!"});
+    })
+  } else {
+    res.render("contact", {title: "Database full!"});
+  }
+})
 module.exports = router;

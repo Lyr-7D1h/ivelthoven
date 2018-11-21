@@ -17,6 +17,45 @@ body {
     padding-left: 17%;
     padding-right: 17%;
     text-align: left; }
+  body .project_box {
+    background-color: #222;
+    padding: 4%;
+    box-shadow: 5px 5px 10px black;
+    position: relative;
+    width: 92%;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 5%; }
+    body .project_box .tags {
+      position: absolute;
+      left: 10;
+      top: 10; }
+      body .project_box .tags .tag {
+        float: left;
+        padding: 3px;
+        font-size: 1.2vw;
+        margin-right: 10px; }
+      body .project_box .tags .blue {
+        background-color: blue; }
+      body .project_box .tags .red {
+        background-color: red; }
+      body .project_box .tags .green {
+        background-color: green; }
+    body .project_box .date {
+      position: absolute;
+      right: 12px;
+      top: 0;
+      font-size: 1vw; }
+    body .project_box p {
+      color: #c8c8c8;
+      font-size: 1.4vw; }
+    body .project_box img {
+      border-radius: 5px;
+      width: 50vw;
+      transition: 1s;
+      filter: greyscale(); }
+      body .project_box img:hover {
+        filter: saturate(3); }
   body .colored {
     color: orange; }
   body #overlay {
@@ -36,7 +75,10 @@ body {
     font-size: 1vw; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #c86400; }
+  a:hover {
+    color: #fa9600; }
 
 i {
   color: orange;
@@ -47,6 +89,23 @@ i {
     cursor: pointer;
     color: yellow;
     content: TEST; }
+
+button {
+  position: relative;
+  box-shadow: 2px 2px 15px black;
+  margin: 3%;
+  width: 25%;
+  font-size: 2vw;
+  border: none;
+  color: white;
+  padding: 50px;
+  background-color: #444;
+  transition: 1s; }
+  button:hover {
+    background-color: #222;
+    color: orange;
+    transition: 1.5s;
+    cursor: pointer; }
 
 #title_description_text {
   display: none; }
@@ -133,5 +192,26 @@ i {
     .skills .skill_box p {
       font-size: 1.4vw;
       text-align: left; }
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; }
+
+input[type=submit] {
+  background-color: darkorange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; }
+
+input[type=submit]:hover {
+  background-color: orange; }
 
 /*# sourceMappingURL=style.css.map */

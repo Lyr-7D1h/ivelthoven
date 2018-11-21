@@ -24,6 +24,46 @@ body
     padding-left: 17%
     padding-right: 17%
     text-align: left
+  .project_box
+    background-color: #222
+    padding: 4%
+    box-shadow: 5px 5px 10px black
+    position: relative
+    width: 92%
+    border-radius: 10px
+    text-align: center
+    margin-bottom: 5%
+    .tags
+      position: absolute
+      left: 10
+      top: 10
+      .tag
+        float: left
+        padding: 3px
+        font-size: 1.2vw
+        margin-right: 10px
+      .blue
+        background-color: blue
+      .red
+        background-color: red
+      .green
+        background-color: green
+    .date
+      position: absolute
+      right: 12px
+      top: 0
+      font-size: 1vw
+    p
+      color: rgb(200,200,200)
+      font-size: 1.4vw
+    img 
+      border-radius: 5px
+      width: 50vw
+      transition: 1s
+      filter: greyscale()
+      &:hover
+        filter: saturate(3)
+
   .colored 
     color: $secundary_color
   #overlay 
@@ -43,6 +83,9 @@ body
     font-size: 1vw
 a
   text-decoration: none
+  color: rgb(200,100,0)
+  &:hover
+    color: rgb(250,150,0)
 i
   color: $secundary_color
   //display: none
@@ -53,6 +96,23 @@ i
     cursor: pointer
     color: yellow
     content: TEST
+
+button 
+  position: relative
+  box-shadow: 2px 2px 15px black
+  margin: 3%
+  width: 25%
+  font-size: 2vw
+  border: none
+  color: white
+  padding: 50px
+  background-color: #444
+  transition: 1s
+  &:hover 
+    background-color: #222
+    color: $secundary_color
+    transition: 1.5s
+    cursor: pointer
 
 #title_description_text 
   display: none
@@ -139,3 +199,29 @@ i
     p 
       font-size: 1.4vw
       text-align: left
+
+
+  
+input[type=text], select, textarea 
+  width: 100%
+  padding: 12px
+  border: 1px solid #ccc
+  border-radius: 4px
+  box-sizing: border-box
+  margin-top: 6px
+  margin-bottom: 16px
+  resize: vertical
+
+
+input[type=submit] 
+  background-color: darkorange
+  color: white
+  padding: 12px 20px
+  border: none
+  border-radius: 4px
+  cursor: pointer
+
+
+input[type=submit]:hover 
+  background-color: orange
+

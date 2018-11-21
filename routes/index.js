@@ -41,28 +41,32 @@ router.post('/contact', function(req,res,next) {
   let boxes = [firstname, lastname, subject];
   for (k in boxes) {
     if (boxes[k].length > 900) {
-      res.render("contact", {title: "Too big!"});
+      res.render("contact", {title: "Too big!", version: version});
       return
     }
   }
   let date = new Date();
-  let contact_form = `DATE: ${date}\nFIRSTNAME: ${firstname} \nLASTNAME: ${lastname}\nSUBJECT: ${subject}\n\n`
+  let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+  let contact_form = `IP: ${ip} \nDATE: ${date}\nFIRSTNAME: ${firstname} \nLASTNAME: ${lastname}\nSUBJECT: ${subject}\n\n`
   
   let database_path = './database/contact'
   
   let database_size = fs.statSync(database_path).size;
 
-  console.log(database_size);
+  // console.log(database_size);
+  // console.log(ip);
+
   if (database_size < 60000) {
     fs.appendFile(database_path, contact_form, function(err) {
       if (err) {
         return console.log(err);
       }
       console.log("CONTACT FORM SAVED");
-      res.render("contact", {title: "Form Send!"});
+      res.render("contact", {title: "Form Send!", version: version});
     })
   } else {
-    res.render("contact", {title: "Database full!"});
+    res.render("contact", {title: "Database full!", version: version});
   }
 })
 module.exports = router;
